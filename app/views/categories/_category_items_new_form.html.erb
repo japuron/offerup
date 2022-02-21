@@ -63,7 +63,7 @@
     <%= f.label :comment_id %>
 
     <!-- Input for comment_id start -->
-    <%= f.text_field :comment_id, class: "form-control" %>
+    <%= f.collection_select :comment_id, Comment.all, :id, :to_s, {}, class: "form-control" %>
     <!-- Input for comment_id end -->
   </div>
   <!-- Label and input for comment_id end -->
