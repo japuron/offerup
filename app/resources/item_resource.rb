@@ -12,6 +12,8 @@ class ItemResource < ApplicationResource
 
   # Direct associations
 
+  belongs_to :comment
+
   belongs_to :category
 
   belongs_to :seller,

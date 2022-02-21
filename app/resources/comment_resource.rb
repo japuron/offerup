@@ -7,6 +7,8 @@ class CommentResource < ApplicationResource
 
   # Direct associations
 
+  has_many   :items
+
   belongs_to :commenter,
              resource: UserResource
 
