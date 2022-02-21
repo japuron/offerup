@@ -24,7 +24,11 @@
 
       <dt>Category</dt>
       <!-- Display category_id start -->
-      <dd><%= item.category_id %></dd>
+      <dd>
+        <% if @item.category.present? %>
+          <%= link_to item.category, item.category %>
+        <% end %>
+      </dd>
       <!-- Display category_id end -->
 
       <dt>Item description</dt>
@@ -34,12 +38,20 @@
 
       <dt>Seller</dt>
       <!-- Display seller_id start -->
-      <dd><%= item.seller_id %></dd>
+      <dd>
+        <% if @item.seller.present? %>
+          <%= link_to item.seller, item.seller %>
+        <% end %>
+      </dd>
       <!-- Display seller_id end -->
 
       <dt>Comment</dt>
       <!-- Display comment_id start -->
-      <dd><%= item.comment_id %></dd>
+      <dd>
+        <% if @item.comment.present? %>
+          <%= link_to item.comment, item.comment %>
+        <% end %>
+      </dd>
       <!-- Display comment_id end -->
 
     </dl>
