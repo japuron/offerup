@@ -12,7 +12,11 @@
 
       <dt>User location</dt>
       <!-- Display user_location start -->
-      <dd><%= user.user_location %></dd>
+      <dd>
+        <div>
+          <%= render partial: "users/one_photo_map" %>
+        </div>
+      </dd>
       <!-- Display user_location end -->
 
     </dl>
