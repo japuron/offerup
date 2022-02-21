@@ -2,10 +2,10 @@ class Comment < ApplicationRecord
   # Direct associations
 
   has_many   :items,
-             :dependent => :destroy
+             dependent: :destroy
 
   belongs_to :commenter,
-             :class_name => "User"
+             class_name: "User"
 
   # Indirect associations
 
@@ -16,5 +16,4 @@ class Comment < ApplicationRecord
   def to_s
     commenter.to_s
   end
-
 end

@@ -8,7 +8,7 @@ class Item < ApplicationRecord
   belongs_to :category
 
   belongs_to :seller,
-             :class_name => "User"
+             class_name: "User"
 
   # Indirect associations
 
@@ -19,5 +19,4 @@ class Item < ApplicationRecord
   def to_s
     item_title
   end
-
 end

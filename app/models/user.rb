@@ -1,10 +1,10 @@
-require 'open-uri'
+require "open-uri"
 class User < ApplicationRecord
   before_validation :geocode_user_location
 
   def geocode_user_location
-    if self.user_location.present?
-      url = "https://maps.googleapis.com/maps/api/geocode/json?key=#{ENV['GMAP_API_KEY']}&address=#{URI.encode(self.user_location)}"
+    if user_location.present?
+      url = "https://maps.googleapis.com/maps/api/geocode/json?key=#{ENV['GMAP_API_KEY']}&address=#{URI.encode(user_location)}"
 
       raw_data = open(url).read
 
@@ -19,17 +19,17 @@ class User < ApplicationRecord
       end
     end
   end
-  
+
   include JwtToken
-# Direct associations
+  # Direct associations
 
   has_many   :comments,
-             :foreign_key => "commenter_id",
-             :dependent => :destroy
+             foreign_key: "commenter_id",
+             dependent: :destroy
 
   has_many   :items,
-             :foreign_key => "seller_id",
-             :dependent => :destroy
+             foreign_key: "seller_id",
+             dependent: :destroy
 
   # Indirect associations
 
