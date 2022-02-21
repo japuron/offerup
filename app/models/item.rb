@@ -1,6 +1,8 @@
 class Item < ApplicationRecord
   # Direct associations
 
+  belongs_to :comment
+
   belongs_to :category
 
   belongs_to :seller,
