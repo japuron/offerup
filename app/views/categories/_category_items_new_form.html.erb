@@ -1,68 +1,38 @@
-<!-- Form item start -->
 <%= form_with(model: @item, local: true) do |f| %>
-<!-- Form item end -->
 
-  <!-- Label and input for item_title start -->
   <div class="form-group">
     <%= f.label :item_title %>
 
-    <!-- Input for item_title start -->
     <%= f.text_field :item_title, class: "form-control" %>
-    <!-- Input for item_title end -->
   </div>
-  <!-- Label and input for item_title end -->
 
-  <!-- Label and input for item_picture start -->
   <div class="form-group">
     <%= f.label :item_picture %>
 
-    <!-- Input for item_picture start -->
     <%= f.file_field :item_picture, class: "form-control" %>
-    <!-- Input for item_picture end -->
   </div>
-  <!-- Label and input for item_picture end -->
 
-  <!-- Label and input for item_price start -->
   <div class="form-group">
     <%= f.label :item_price %>
 
-    <!-- Input for item_price start -->
     <%= f.text_field :item_price, class: "form-control" %>
-    <!-- Input for item_price end -->
   </div>
-  <!-- Label and input for item_price end -->
 
-  <!-- Label and input for category_id start -->
-  <!-- Input for category_id start -->
   <%= f.hidden_field :category_id, value: @category.id %>
-  <!-- Input for category_id end -->
-  <!-- Label and input for category_id end -->
 
-  <!-- Label and input for item_description start -->
   <div class="form-group">
     <%= f.label :item_description %>
 
-    <!-- Input for item_description start -->
     <%= f.text_field :item_description, class: "form-control" %>
-    <!-- Input for item_description end -->
   </div>
-  <!-- Label and input for item_description end -->
 
-  <!-- Label and input for seller_id start -->
-  <!-- Input for "seller_id" start -->
   <%= f.hidden_field :seller_id, value: current_user.id %>
-  <!-- Input for "seller_id" end -->
-  <!-- Label and input for seller_id end -->
 
-  <!-- Label and input for comment_id start -->
   <div class="form-group">
     <%= f.label :comment_id %>
 
-    <!-- Input for comment_id start -->
     <%= f.collection_select :comment_id, Comment.all, :id, :to_s, {}, class: "form-control" %>
-    <!-- Input for comment_id end -->
   </div>
-  <!-- Label and input for comment_id end -->
 
   <%= f.submit "Create item", class: "btn btn-block btn-outline-secondary" %>
 <% end %>

@@ -6,53 +6,39 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>Item title</dt>
-      <!-- Display item_title start -->
       <dd><%= item.item_title %></dd>
-      <!-- Display item_title end -->
 
       <dt>Item picture</dt>
-      <!-- Display item_picture start -->
       <dd>
         <%= cl_image_tag @item.item_picture, class: "img-fluid" %>
       </dd>
-      <!-- Display item_picture end -->
 
       <dt>Item price</dt>
-      <!-- Display item_price start -->
       <dd><%= item.item_price %></dd>
-      <!-- Display item_price end -->
 
       <dt>Category</dt>
-      <!-- Display category_id start -->
       <dd>
         <% if @item.category.present? %>
           <%= link_to item.category, item.category %>
         <% end %>
       </dd>
-      <!-- Display category_id end -->
 
       <dt>Item description</dt>
-      <!-- Display item_description start -->
       <dd><%= item.item_description %></dd>
-      <!-- Display item_description end -->
 
       <dt>Seller</dt>
-      <!-- Display seller_id start -->
       <dd>
         <% if @item.seller.present? %>
           <%= link_to item.seller, item.seller %>
         <% end %>
       </dd>
-      <!-- Display seller_id end -->
 
       <dt>Comment</dt>
-      <!-- Display comment_id start -->
       <dd>
         <% if @item.comment.present? %>
           <%= link_to item.comment, item.comment %>
         <% end %>
       </dd>
-      <!-- Display comment_id end -->
 
     </dl>
 
@@ -61,7 +47,6 @@
         <%= link_to_show_or_back item, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link item start -->
       <div class="col">
         <% if current_user == @item.seller %>
           <%= link_to edit_item_url(item), class: "btn btn-block btn-sm btn-outline-secondary" do %>
@@ -69,9 +54,7 @@
           <% end %>
         <% end %>
       </div>
-      <!-- Edit link item end -->
 
-      <!-- Delete link item start -->
       <div class="col">
         <% if current_user == @item.seller %>
           <%= link_to item, method: :delete, data: { confirm: "Do you really want to delete this item?" }, class: "btn btn-block btn-outline-secondary" do %>
@@ -79,7 +62,6 @@
           <% end %>
         <% end %>
       </div>
-      <!-- Delete link item end -->
     </div>
   </div>
 
