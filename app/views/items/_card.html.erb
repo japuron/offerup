@@ -12,7 +12,9 @@
 
       <dt>Item picture</dt>
       <!-- Display item_picture start -->
-      <dd><%= item.item_picture %></dd>
+      <dd>
+        <%= cl_image_tag @item.item_picture, class: "img-fluid" %>
+      </dd>
       <!-- Display item_picture end -->
 
       <dt>Item price</dt>

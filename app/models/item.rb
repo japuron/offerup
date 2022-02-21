@@ -1,4 +1,6 @@
 class Item < ApplicationRecord
+  mount_base64_uploader :item_picture, ItemPictureUploader
+
   # Direct associations
 
   belongs_to :comment
